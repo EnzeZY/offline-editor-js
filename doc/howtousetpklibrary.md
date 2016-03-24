@@ -103,7 +103,7 @@ Yes for ArcGIS API for JavaScript v3.8+ and ONLY if the TPKs Levels of Detail (L
 
 The basemap (base tiled layer) defines the LODs that the map can display. Any other operational tiled layers on the map will not display if they don’t match the basemap’s LODs. Esri.Map doesn’t union LODs of all tiled layers on the map.
 
-You can also use the `TPKLayer.loadFromURL()` method to add tiled map service tiles directly to the database. In order to get the tile information, use this method with `offlineTilesEnabler.saveToFile()` and `OfflineTilesEnablerLayer.saveToFile()`. That will create a CSV file that contains all the tiles within the extent that you define. The tiles-indexed-db.html sample demonstrates this pattern. Each tile within the CSV is defined by a URL as a String, and the tile image as a base64 String:
+You can also use the `TPKLayer.loadFromURL()` method to add tiled map service tiles directly to the database. In order to get the tile information, use this method with `OfflineTilesBasic.saveToFile()` and `OfflineTilesAdvanced.saveToFile()`. That will create a CSV file that contains all the tiles within the extent that you define. The tiles-indexed-db.html sample demonstrates this pattern. Each tile within the CSV is defined by a URL as a String, and the tile image as a base64 String:
 
 ```js
 
@@ -117,6 +117,10 @@ You can also use the `TPKLayer.loadFromURL()` method to add tiled map service ti
 See the [TPKLayer API doc](tpklayer.md) for more info.
 
 For more information on creating TPKs go [here](http://resources.arcgis.com/en/help/main/10.1/index.html#//006600000457000000).
+
+**Can I use the TPKLayer with `OfflineEditAdvanced`?**
+
+Yes, you can use the TPKLayer library alongside the `OfflineEditAdvanced` library. Spatial references must be exactly the same for both the TPK and the feature service.
 
 **Additional Considerations**
 
